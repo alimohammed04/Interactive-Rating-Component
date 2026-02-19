@@ -1,0 +1,143 @@
+*,
+*::before,
+*::after {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
+body {
+    background-color: hsl(216, 12%, 8%);
+    width: 100vw;
+    height: 100vh;
+    position: relative;
+    font-family: "Overpass", sans-serif;
+    font-weight: 700;
+}
+
+.rating-card {
+    margin: 20px;
+    padding: 20px;
+    background-color: hsl(213, 19%, 18%);
+    border-radius: 15px;
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    overflow: hidden;
+}
+
+@media (min-width:426px) {
+    .rating-card {
+        left: 50%;
+        transform: translate(-50%, -50%);
+        margin: 0;
+    }
+}
+
+@media (min-width:769px) {
+    .rating-card {
+        width: 28%;
+    }
+}
+
+.rating-card .star {
+    width: 35px;
+    height: 35px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border-radius: 50%;
+    background-color: hsl(217, 12%, 33%);
+    margin-bottom: 20px;
+}
+
+
+.rating-card h2 {
+    color: hsl(0, 100%, 100%);
+    margin-bottom: 15px;
+}
+
+.rating-card p {
+    font-size: 15px;
+    color: hsl(217, 12%, 63%);
+    line-height: 1.6;
+    font-weight: 400;
+}
+
+.rating-card .rates-values {
+    display: flex;
+    width: 100%;
+    align-items: center;
+    justify-content: space-between;
+    list-style: none;
+    margin: 20px 0;
+}
+
+.rating-card .rates-values li {
+    width: 35px;
+    height: 35px;
+    border-radius: 50%;
+    background-color: hsl(217, 12%, 33%);
+    color: hsl(217, 12%, 63%);
+    cursor: pointer;
+    transition: 0.3s;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.rating-card .rates-values li:hover {
+    background-color: hsl(25, 97%, 53%);
+    color: hsl(213, 19%, 18%);
+}
+
+.rating-card .rates-values li.selected {
+    background-color: hsl(0, 100%, 100%);
+    color: hsl(213, 19%, 18%);
+}
+
+.rating-card button {
+    width: 100%;
+    padding: 12px;
+    border-radius: 20px;
+    border: none;
+    font-weight: 700;
+    color: #252d37;
+    cursor: pointer;
+    transition: 0.3s;
+    background-color: hsl(25, 97%, 53%);
+}
+
+.rating-card button:hover {
+    background-color: hsl(0, 100%, 100%);
+}
+
+.rating-card button:disabled {
+    opacity: 0.5;
+    cursor: not-allowed;
+}
+
+.rating-card .thank-you-card {
+    position: absolute;
+    top: 0;
+    left: 0;
+    background-color: #252d37;
+    text-align: center;
+    padding: 20px;
+    transition: 0.4s;
+    transform: scale(0);
+}
+
+.rating-card .thank-you-card.show {
+    transform: scale(1)
+}
+
+.rating-card .thank-you-card p:first-of-type {
+    color: hsl(25, 97%, 53%);
+    background-color: hsl(217, 12%, 33%);
+    margin: 10px auto;
+    width: fit-content;
+    padding: 2px 20px;
+    border-radius: 30px;
+    font-weight: 400;
+}
